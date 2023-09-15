@@ -34,7 +34,6 @@ export const resolvers = {
       const noteId = args.noteId;
       const note = await NoteModel.findById(noteId);
       return note;
-      // return fakeData.notes.find((note) => note.id === noteId);
     },
   },
   Folder: {
@@ -54,7 +53,6 @@ export const resolvers = {
       });
       console.log({ notes });
       return notes;
-      // return fakeData.notes.filter((note) => note.folderId === parent.id);
     },
   },
   Mutation: {
