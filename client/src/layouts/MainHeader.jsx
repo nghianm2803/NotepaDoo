@@ -91,12 +91,21 @@ function MainHeader() {
           </Typography>
 
           <Box sx={{ flexGrow: 1 }} />
-          <Box>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              "&:hover": {
+                cursor: "pointer",
+              },
+            }}
+          >
+            <Typography>{displayName}</Typography>
             <Avatar
               onClick={handleProfileMenuOpen}
               src={photoURL}
               alt={displayName}
-              sx={{ width: 35, height: 35, cursor: "pointer" }}
+              sx={{ width: 35, height: 35 }}
             />
           </Box>
         </Toolbar>

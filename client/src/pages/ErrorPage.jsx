@@ -4,7 +4,14 @@ import { Box, Button, Typography, Container } from "@mui/material";
 function ErrorPage() {
   const error = useRouteError();
   return (
-    <Container sx={{ display: "flex", height: "100%", alignItems: "center" }}>
+    <Container
+      maxWidth="lg"
+      sx={{
+        textAlign: "center",
+        height: "100%",
+        marginTop: "50px",
+      }}
+    >
       <Box sx={{ maxWidth: 480, margin: "auto", textAlign: "center" }}>
         <Typography variant="h4" paragraph>
           Page not found!
