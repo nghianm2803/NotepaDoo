@@ -95,9 +95,6 @@ function MainHeader() {
             sx={{
               display: "flex",
               alignItems: "center",
-              "&:hover": {
-                cursor: "pointer",
-              },
             }}
           >
             <Typography>{displayName}</Typography>
@@ -105,7 +102,12 @@ function MainHeader() {
               onClick={handleProfileMenuOpen}
               src={photoURL}
               alt={displayName}
-              sx={{ width: 35, height: 35 }}
+              sx={{
+                width: 35,
+                height: 35,
+                marginLeft: "5px",
+                cursor: "pointer",
+              }}
             />
           </Box>
         </Toolbar>

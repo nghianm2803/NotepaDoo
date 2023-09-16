@@ -41,7 +41,7 @@ export default function Login() {
   return (
     <Container maxWidth="lg" sx={{ textAlign: "center", marginTop: "50px" }}>
       <Typography variant="h5" sx={{ marginBottom: "10px" }}>
-        Welcome to Notepad
+        Welcome to NotepaDoo
       </Typography>
       <Button variant="outlined" onClick={handleLoginWithGoogle}>
         Login with Google
