@@ -8,7 +8,7 @@ import {
   TextField,
   Tooltip,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CreateNewFolderOutlined } from "@mui/icons-material";
 import { useSearchParams, useNavigate } from "react-router-dom";
 

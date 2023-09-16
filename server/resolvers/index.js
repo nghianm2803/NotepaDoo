@@ -21,12 +21,12 @@ export const resolvers = {
       }).sort({
         updatedAt: 'desc',
       });
-      console.log({ folders, context });
+      // console.log({ folders, context });
       return folders;
     },
     folder: async (parent, args) => {
       const folderId = args.folderId;
-      console.log({ folderId });
+      // console.log({ folderId });
       const foundFolder = await FolderModel.findById(folderId);
       return foundFolder;
     },
@@ -45,13 +45,13 @@ export const resolvers = {
       return author;
     },
     notes: async (parent, args) => {
-      console.log({ parent });
+      // console.log({ parent });
       const notes = await NoteModel.find({
         folderId: parent.id,
       }).sort({
         updatedAt: 'desc',
       });
-      console.log({ notes });
+      // console.log({ notes });
       return notes;
     },
   },

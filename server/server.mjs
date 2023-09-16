@@ -62,7 +62,7 @@ const authorizationJWT = async (req, res, next) => {
     getAuth()
       .verifyIdToken(accessToken)
       .then((decodedToken) => {
-        console.log({ decodedToken });
+        // console.log({ decodedToken });
         res.locals.uid = decodedToken.uid;
         next();
       })
@@ -97,5 +97,4 @@ mongoose
     console.log(`Connected to Database: ${process.env.MONGO_URI}`);
     console.log("Server launch ~ port", PORT);
     await new Promise((resolve) => httpServer.listen({ port: PORT, resolve }));
-    console.log("Server launch ~ port");
   });

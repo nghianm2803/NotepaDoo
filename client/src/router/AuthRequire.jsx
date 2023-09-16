@@ -1,6 +1,6 @@
 import { Outlet, Navigate } from "react-router-dom";
 
-export default function AuthRequire() {
+function AuthRequire() {
   console.log({ accessToken: localStorage.getItem("accessToken") });
   if (!localStorage.getItem("accessToken")) {
     return <Navigate to="/login" />;
@@ -8,3 +8,4 @@ export default function AuthRequire() {
 
   return <Outlet />;
 }
+export default AuthRequire;

@@ -1,6 +1,6 @@
 import { Card, CardContent, List, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import NewFolder from "./NewFolder";
 
