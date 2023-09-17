@@ -26,9 +26,7 @@ export default function FolderList({ folders }) {
             justifyContent: "space-between",
           }}
         >
-          <Typography sx={{ fontWeight: "bold", color: "white" }}>
-            Folders
-          </Typography>
+          <Typography sx={{ fontWeight: "bold" }}>Folders</Typography>
           <NewFolder />
         </Box>
       }
@@ -46,8 +44,7 @@ export default function FolderList({ folders }) {
             <Card
               sx={{
                 mb: "5px",
-                backgroundColor:
-                  id === activeFolderId ? "rgb(255 211 140)" : null,
+                backgroundColor: id === activeFolderId ? "#919EAB" : null,
               }}
             >
               <CardContent

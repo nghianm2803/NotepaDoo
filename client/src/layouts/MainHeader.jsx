@@ -7,9 +7,12 @@ import {
   Menu,
   AppBar,
   IconButton,
+  Button,
 } from "@mui/material";
 import { useContext } from "react";
-
+import { useThemeContext } from "../theme";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import LightModeIcon from "@mui/icons-material/LightMode";
 import Logo from "../components/Logo";
 import { Avatar, Divider } from "@mui/material";
 import { AuthContext } from "../context/AuthProvider";
@@ -20,6 +23,7 @@ function MainHeader() {
   } = useContext(AuthContext);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const { toggleTheme, theme } = useThemeContext();
 
   const isMenuOpen = Boolean(anchorEl);
 
@@ -69,8 +73,8 @@ function MainHeader() {
   );
 
   return (
-    <Box sx={{ mb: 3 }}>
-      <AppBar position="static" color="transparent">
+    <Box sx={{ mb: 12 }}>
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton
             size="large"
@@ -97,18 +101,61 @@ function MainHeader() {
               alignItems: "center",
             }}
           >
-            <Typography>{displayName}</Typography>
-            <Avatar
+            {theme.palette.mode === "dark" ? (
+              <Button
+                variant="primary"
+                onClick={toggleTheme}
+                sx={{
+                  width: "40px",
+                  height: "40px",
+                  borderRadius: "20px",
+                }}
+              >
+                <LightModeIcon
+                  sx={{
+                    cursor: "pointer",
+                    color: "#FFF",
+                  }}
+                />
+              </Button>
+            ) : (
+              <Button
+                variant="primary"
+                onClick={toggleTheme}
+                sx={{
+                  width: "40px",
+                  height: "40px",
+                  borderRadius: "20px",
+                }}
+              >
+                <DarkModeIcon
+                  sx={{
+                    cursor: "pointer",
+                    color: "#000",
+                  }}
+                />
+              </Button>
+            )}
+            <Box
               onClick={handleProfileMenuOpen}
-              src={photoURL}
-              alt={displayName}
               sx={{
-                width: 35,
-                height: 35,
-                marginLeft: "5px",
+                display: "flex",
                 cursor: "pointer",
+                alignItems: "center",
               }}
-            />
+            >
+              <Avatar
+                onClick={handleProfileMenuOpen}
+                src={photoURL}
+                alt={displayName}
+                sx={{
+                  width: 35,
+                  height: 35,
+                  marginRight: "10px",
+                }}
+              />
+              <Typography>{displayName}</Typography>
+            </Box>
           </Box>
         </Toolbar>
       </AppBar>

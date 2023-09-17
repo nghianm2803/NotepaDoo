@@ -13,11 +13,14 @@ import {
   updateNote,
 } from "../utils/noteUtils";
 import AuthRequire from "./AuthRequire";
+import ThemeProvider from "../theme";
 
 const AuthLayout = () => {
   return (
     <AuthProvider>
-      <Outlet />
+      <ThemeProvider>
+        <Outlet />
+      </ThemeProvider>
     </AuthProvider>
   );
 };

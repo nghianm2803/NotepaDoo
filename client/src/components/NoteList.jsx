@@ -59,7 +59,7 @@ export default function NoteList() {
         sx={{
           width: "100%",
           maxWidth: 360,
-          bgcolor: "#F0EBE3",
+          bgcolor: "#A6B5B4",
           height: "100%",
           overflowY: "auto",
           padding: "10px",
@@ -96,7 +96,7 @@ export default function NoteList() {
                   sx={{
                     mb: "5px",
                     backgroundColor:
-                      id === activeNoteId ? "rgb(255 211 140)" : null,
+                      id === activeNoteId ? "#919EAB" : null,
                   }}
                 >
                   <CardContent

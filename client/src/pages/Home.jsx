@@ -9,11 +9,11 @@ export default function Home() {
   return (
     <Stack sx={{ minHeight: "100vh" }}>
       <MainHeader />
-      <Container maxWidth="lg" sx={{ textAlign: "center", marginTop: "50px" }}>
+      <Container maxWidth="lg" sx={{ textAlign: "center", marginTop: "10px" }}>
         <Grid
           container
           sx={{
-            height: "50vh",
+            height: "70vh",
             boxShadow: "0 0 15px 0 rgb(193 193 193 / 60%)",
           }}
         >
